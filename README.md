@@ -189,4 +189,28 @@ node scripts/build-graph.js
 
 ## 8. Demo
 
-> Demo link: _Coming soon_
+> **Live Demo**: https://dodgeai-backend-un2l.onrender.com/
+
+---
+
+## 9. Project Structure
+
+```
+DodgeAI/
+  README.md
+  backend/            # Node.js + Express API + SQLite
+    src/
+      server.js       # Entry point, serves frontend + API
+      db/             # Schema definitions, JSONL loader
+      llm/            # OpenRouter integration, prompt engineering
+      routes/         # POST /query pipeline
+      middleware/     # Guardrails (injection + topic filter)
+  frontend/           # React + React Flow graph UI
+    src/
+      App.js          # Main app with graph + chat panel
+      components/     # GraphView, QueryPanel, MetadataPanel, SearchBar, Legend
+    scripts/
+      build-graph.js  # JSONL → graph-data.json converter
+  sap-o2c-data/       # Raw dataset (19 JSONL tables)
+  sessions/           # AI coding session logs (Claude Code)
+```
